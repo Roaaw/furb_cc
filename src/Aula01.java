@@ -14,5 +14,6 @@ public class Aula01 {
         float media = soma / 3;
         System.out.println("Total: "+soma);
         System.out.println("Média: "+media);
+        scan.close();
     }
 }
