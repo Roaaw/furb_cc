@@ -12,7 +12,8 @@ public class Uni2Exe05 {
         valorC = scan.nextInt();
         System.out.print("Valor D: ");
         valorD = scan.nextInt();
-        fomula = (valorA * valorB) + (valorC*valorD);
-        System.out.println(fomula);
+        fomula = (valorA * valorB) - (valorC * valorD);
+        System.out.printf("Resultado: %s",fomula);
+        scan.close();
     }
 }

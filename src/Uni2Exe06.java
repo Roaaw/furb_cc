@@ -12,7 +12,7 @@ public class Uni2Exe06 {
         System.out.print("Digite o valor da hora trabalhada: ");
         valorhora = scan.nextFloat();
         salario = horastrabalhadas * valorhora;
-        System.out.printf("Funcionario ID:"+funcionarioID+ " Salario:%.2f%n", salario);
         System.out.printf("Funcionario ID: %03d"+" Salario: %.2f", funcionarioID, salario);
+        scan.close();
     }
 }

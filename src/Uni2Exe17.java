@@ -15,10 +15,11 @@ public class Uni2Exe17 {
         horaTrab = scan.nextFloat();
         System.out.print("Número de Dependetes: ");
         numDependentes = scan.nextFloat();
-        salarioBruto =  ((horaTrab*valorHora)+(valorDependente*numDependentes));
-        calcInss = salarioBruto*inss;
-        calcIr = salarioBruto*ir;
+        salarioBruto =  ((horaTrab * valorHora) + (valorDependente * numDependentes));
+        calcInss = salarioBruto * inss;
+        calcIr = salarioBruto * ir;
         salarioLiquido = salarioBruto - calcInss - calcIr;
         System.out.printf("O funcionario %s ira receber um salario bruto de %.2f descontos de INSS %.2f e IR %.2f, salario liquido %.2f",nomefuncionario,salarioBruto,calcInss,calcIr,salarioLiquido);
+        scan.close();
     }
 }

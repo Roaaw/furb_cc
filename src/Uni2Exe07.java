@@ -14,5 +14,6 @@ public class Uni2Exe07 {
     comissao = vendas*0.15f;
     salarioecomissao = salario+comissao;
     System.out.printf("Vendedor:%s"+" vai receber de comissão %.2f"+" Totalizando %.2f",vendedor,comissao,salarioecomissao);
+    scan.close();
  }
 }

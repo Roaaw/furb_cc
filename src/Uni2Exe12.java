@@ -12,7 +12,8 @@ public class Uni2Exe12 {
         x2 = scan.nextFloat();
         System.out.print("Valor de Y2:");
         y2 = scan.nextFloat();
-        resultado = Math.sqrt(Math.pow((x2-x1), 2)+Math.pow((y2-y1), 2));
-        System.out.printf("%.4f",resultado);
+        resultado = Math.sqrt(Math.pow((x2 - x1), 2)+Math.pow((y2 - y1), 2));
+        System.out.printf("Resultado: %.4f",resultado);
+        scan.close();
     }
 }
