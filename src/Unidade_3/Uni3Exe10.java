@@ -1,5 +1,7 @@
 package Unidade_3;
 
+import java.util.Scanner;
+
 public class Uni3Exe10 {
     private double cateto1;
     private double cateto2;
@@ -17,9 +19,30 @@ public class Uni3Exe10 {
 
     public static void main(String[] args) {
         Uni3Exe10 classExec = new Uni3Exe10(0, 0, 0);
-        double result = classExec.hipotenusa(3, 4);
-        System.out.println(result);
-        result = classExec.hipotenusa(5, 12);
-        System.out.println(result);
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Insira o cateto oposto:");
+        float cateto1 = sc.nextFloat();
+        System.out.print("Insira o cateto adjacente:");
+        float cateto2 = sc.nextFloat();
+        double result = classExec.hipotenusa(cateto1, cateto2);
+        System.out.printf("A hipotenusa é: %.2f", result);
+        sc.close();
     }
 }
+/*
+TESTE 1
+Insira o cateto oposto:3
+Insira o cateto adjacente:4
+A hipotenusa é: 5,00
+
+TESTE 2
+Insira o cateto oposto:5
+Insira o cateto adjacente:12
+A hipotenusa é: 13,00
+
+TESTE 3
+Insira o cateto oposto:8 
+Insira o cateto adjacente:20
+A hipotenusa é: 21,54
+
+*/

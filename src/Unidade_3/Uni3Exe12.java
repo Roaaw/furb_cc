@@ -1,5 +1,7 @@
 package Unidade_3;
 
+import java.util.Scanner;
+
 public class Uni3Exe12 {
     private String nome;
     private float horasTrab;
@@ -33,26 +35,44 @@ public class Uni3Exe12 {
 
     public static void main(String[] args) {
         Uni3Exe12 classExec = new Uni3Exe12(null, 0, 0);
-        float result = classExec.calcSalario(160f);
-        System.out.printf("Salario: %.2f%n", result);
-        result = classExec.calcDependetes(2f);
-        System.out.printf("Dependentes: %.2f%n", result);
-        result = classExec.descIcms(160f, 2f);   
-        System.out.printf("Icms: %.2f%n", result);
-        result = classExec.descInss(160f, 2f);
-        System.out.printf("Inss: %.2f%n", result);
-        result = classExec.salarioLiquido(160f, 2f);
-        System.out.printf("Liquido: %.2f%n", result);
-
-        result = classExec.calcSalario(84f);
-        System.out.printf("Salario: %.2f%n", result);
-        result = classExec.calcDependetes(0f);
-        System.out.printf("Dependentes: %.2f%n", result);
-        result = classExec.descIcms(84f, 0f);   
-        System.out.printf("Icms: %.2f%n", result);
-        result = classExec.descInss(84f, 0f);
-        System.out.printf("Inss: %.2f%n", result);
-        result = classExec.salarioLiquido(84f, 0f);
-        System.out.printf("Liquido: %.2f%n", result);
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Insira o nome do funcionário: ");
+        String nome = sc.next();
+        System.out.print("Insira a quantidade de horas trabalhadas no mês: ");
+        float horasTrab = sc.nextFloat();
+        System.out.print("Insira o numero de dependentes: ");
+        float numDependentes = sc.nextFloat();
+        float salBruto = classExec.calcSalario(horasTrab);
+        //System.out.printf("Salario: %.2f%n", salBruto);
+        //float result = classExec.calcDependetes(numDependentes);
+        //System.out.printf("Dependentes: %.2f%n", result);
+        //result = classExec.descIcms(horasTrab, numDependentes);   
+        //System.out.printf("Icms: %.2f%n", result);
+        //result = classExec.descInss(horasTrab, numDependentes);
+        //System.out.printf("Inss: %.2f%n", result);
+        float salLiq = classExec.salarioLiquido(horasTrab, numDependentes);
+        //System.out.printf("Liquido: %.2f%n", salLiq);
+        System.out.printf("O funcionário %s possui um salário bruto de R$ %.2f e um salário líquido de R$ %.2f.",nome, salBruto, salLiq);
+        sc.close();
     }
 }
+/*
+TESTE 1
+Insira o nome do funcionário: João
+Insira a quantidade de horas trabalhadas no mês: 160
+Insira o numero de dependentes: 2
+O funcionário Jo?o possui um salário bruto de R$ 1600,00 e um salário líquido de R$ 1487,80.
+
+TESTE 2
+Insira o nome do funcionário: Carlos
+Insira a quantidade de horas trabalhadas no mês: 84
+Insira o numero de dependentes: 0
+O funcionário Carlos possui um salário bruto de R$ 840,00 e um salário líquido de R$ 726,60.
+
+TESTE 3
+Insira o nome do funcionário: Jorge
+Insira a quantidade de horas trabalhadas no mês: 220
+Insira o numero de dependentes: 4
+O funcionário Jorge possui um salário bruto de R$ 2200,00 e um salário líquido de R$ 2110,60.
+
+*/

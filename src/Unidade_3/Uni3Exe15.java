@@ -39,3 +39,17 @@ public class Uni3Exe15 {
         }
     }
 }
+
+/*
+TESTE 1
+Digite um numero de 3 digitos:816
+8 centena(s) 1 dezena(s) 6 unidade(s)
+
+TESTE 2
+Digite um numero de 3 digitos:974
+9 centena(s) 7 dezena(s) 4 unidade(s)
+
+TESTE 3
+Digite um numero de 3 digitos:199
+1 centena(s) 9 dezena(s) 9 unidade(s)
+*/

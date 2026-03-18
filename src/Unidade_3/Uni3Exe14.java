@@ -1,5 +1,7 @@
 package Unidade_3;
 
+import java.util.Scanner;
+
 public class Uni3Exe14 {
     private float distancia,tempo;
     private final float autonomia = 0.012f;
@@ -13,17 +15,34 @@ public class Uni3Exe14 {
         return (distancia / tempo);
     }
     public float calcAutonomia(float distancia){
-        return (distancia / autonomia);
+        return ((distancia / autonomia) / 1000);
     }
     public static void main(String[] args) {
         Uni3Exe14 classExec = new Uni3Exe14(0, 0);
-        float result = classExec.calcTempo(240f, 4f);
-        System.out.println(result);
-        result = classExec.calcAutonomia(240f);
-        System.out.println(result);
-        result = classExec.calcTempo(150f, 2f);
-        System.out.println(result);
-        result = classExec.calcAutonomia(150f);
-        System.out.printf("%.2f", result);
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Digite a distancia percorrida: ");
+        float distancia = sc.nextFloat();
+        System.out.print("Digite o tempo de viagem: ");
+        float tempo = sc.nextFloat();
+        sc.close();
+        float kmh = classExec.calcTempo(distancia, tempo);
+        float consumo = classExec.calcAutonomia(distancia);
+        System.out.printf("A velocidade média foi de %.2f km/h e a quantidade dde combustível usado foi de %.2f litros.", kmh, consumo);
     }
 }
+/*
+TESTE 1
+Digite a distancia percorrida: 240
+Digite o tempo de viagem: 4
+A velocidade média foi de 60,00 km/h e a quantidade dde combustível usado foi de 20,00 litros.
+
+TESTE 2
+Digite a distancia percorrida: 150
+Digite o tempo de viagem: 2
+A velocidade média foi de 75,00 km/h e a quantidade dde combustível usado foi de 12,50 litros.
+
+TESTE 3
+Digite a distancia percorrida: 95
+Digite o tempo de viagem: 1
+A velocidade média foi de 95,00 km/h e a quantidade dde combustível usado foi de 7,92 litros.
+*/
