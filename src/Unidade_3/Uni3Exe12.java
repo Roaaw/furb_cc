@@ -16,25 +16,26 @@ public class Uni3Exe12 {
         this.horasTrab = horasTrab;
         this.numDependentes = numDependentes;
     }
-
-    public float calcSalario(float horasTrab){
-        return horasTrab * valorHora;
+    public String nome(){
+        return this.nome;
     }
-    public float calcDependetes(float numDependentes){
-        return numDependentes * valorDependente;
+    public float calcSalario(){
+        return this.horasTrab * valorHora;
     }
-    public float descInss(float horasTrab, float numDependentes){
-        return (calcSalario(horasTrab) + calcDependetes(numDependentes)) * valorInss;
+    public float calcDependetes(){
+        return this.numDependentes * valorDependente;
     }
-    public float descIcms(float horasTrab, float numDependentes){
-        return (calcSalario(horasTrab) + calcDependetes(numDependentes)) * valorIcms;
+    public float descInss(){
+        return (calcSalario() + calcDependetes()) * valorInss;
     }
-    public float salarioLiquido(float horasTrab, float numDependentes){
-        return (calcSalario(horasTrab) + calcDependetes(numDependentes)) - descIcms(horasTrab, numDependentes) - descInss(horasTrab, numDependentes);
+    public float descIcms(){
+        return (calcSalario() + calcDependetes()) * valorIcms;
+    }
+    public float salarioLiquido(){
+        return (calcSalario() + calcDependetes()) - descIcms() - descInss();
     }
 
     public static void main(String[] args) {
-        Uni3Exe12 classExec = new Uni3Exe12(null, 0, 0);
         Scanner sc = new Scanner(System.in);
         System.out.print("Insira o nome do funcionário: ");
         String nome = sc.next();
@@ -42,17 +43,14 @@ public class Uni3Exe12 {
         float horasTrab = sc.nextFloat();
         System.out.print("Insira o numero de dependentes: ");
         float numDependentes = sc.nextFloat();
-        float salBruto = classExec.calcSalario(horasTrab);
-        //System.out.printf("Salario: %.2f%n", salBruto);
-        //float result = classExec.calcDependetes(numDependentes);
+        Uni3Exe12 classExec = new Uni3Exe12(nome, horasTrab, numDependentes);
+        //float result = classExec.calcDependetes();
         //System.out.printf("Dependentes: %.2f%n", result);
-        //result = classExec.descIcms(horasTrab, numDependentes);   
+        //result = classExec.descIcms();   
         //System.out.printf("Icms: %.2f%n", result);
-        //result = classExec.descInss(horasTrab, numDependentes);
+        //result = classExec.descInss();
         //System.out.printf("Inss: %.2f%n", result);
-        float salLiq = classExec.salarioLiquido(horasTrab, numDependentes);
-        //System.out.printf("Liquido: %.2f%n", salLiq);
-        System.out.printf("O funcionário %s possui um salário bruto de R$ %.2f e um salário líquido de R$ %.2f.",nome, salBruto, salLiq);
+        System.out.printf("O funcionário %s possui um salário bruto de R$ %.2f e um salário líquido de R$ %.2f.",classExec.nome(), classExec.calcSalario(), classExec.salarioLiquido());
         sc.close();
     }
 }

@@ -5,25 +5,22 @@ import java.util.Scanner;
 public class Uni3Exe03 {
     private float valorCombustivel;
     private float valorDinheiro;
-    private float litros;
 
-    public Uni3Exe03(float valorCombustivel, float valorDinheiro, float litros){
+    public Uni3Exe03(float valorCombustivel, float valorDinheiro){
         this.valorCombustivel = valorCombustivel;
         this.valorDinheiro = valorDinheiro;
-        this.litros = litros;
     }
-    public float litros(float valorCombustivel, float valorDinheiro, float litros){
-        return litros = valorDinheiro / valorCombustivel;
+    public float litros(){
+        return this.valorDinheiro / this.valorCombustivel;
     }
     public static void main(String[] args) {
-        Uni3Exe03 abastecer = new Uni3Exe03(0,0,0);
         Scanner sc = new Scanner(System.in);
         System.out.print("Insira o preço do litro da gasolina:" );
         float valorCombustivel = sc.nextFloat();
         System.out.print("Valor do abastecimento em dinheiro:" );
         float valorDinheiro = sc.nextFloat();
-        float resultado = abastecer.litros(valorCombustivel, valorDinheiro, 0);
-        System.out.printf("O motorista conseguiu colocar %.2f litros.", resultado);
+        Uni3Exe03 abastecer = new Uni3Exe03(valorCombustivel,valorDinheiro);
+        System.out.printf("O motorista conseguiu colocar %.2f litros.", abastecer.litros());
         sc.close();
     }
 }

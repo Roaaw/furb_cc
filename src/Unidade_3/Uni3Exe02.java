@@ -5,25 +5,22 @@ import java.util.Scanner;
 public class Uni3Exe02 {
     private final float desconto = 0.12f;//12%
     private float valorProduto;
-    private float valorDesconto;
 
     public Uni3Exe02(float valorProduto){
         this.valorProduto = valorProduto;
     }
-    public float desconto(float valorProduto){
-        return valorProduto * desconto;
+    public float desconto(){
+        return (this.valorProduto * desconto);
     }
-    public float valor(float valorDesconto){
-        return valorDesconto - desconto(valorDesconto);
+    public float valor(){
+        return this.valorProduto - desconto();
     }
     public static void main(String[] args) {
-        Uni3Exe02 desconto = new Uni3Exe02(0);
         Scanner sc = new Scanner(System.in);
         System.out.print("Informe o valor do par de sapatos: ");
         float valorProduto = sc.nextFloat();
-        float resultado = desconto.desconto(valorProduto);
-        float valorDesconto = desconto.valor(valorProduto);
-        System.out.printf("O valor do desconto é de R$ %.2f.%nO preço do par de sapatos com desconto é R$ %.2f",resultado, valorDesconto);
+        Uni3Exe02 desconto = new Uni3Exe02(valorProduto);
+        System.out.printf("O valor do desconto é de R$ %.2f.%nO preço do par de sapatos com desconto é R$ %.2f",desconto.desconto(), desconto.valor());
         sc.close();
     }
 }

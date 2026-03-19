@@ -6,23 +6,20 @@ public class Uni3Exe06 {
     private final float valorKg = 25f;
     private final float pratoPeso = 0.750f;
     private float pesagem;
-    private float result;
 
-    public Uni3Exe06(float pesagem, float result){
+    public Uni3Exe06(float pesagem){
         this.pesagem = pesagem;
-        this.result = result;
     }
 
-    public float calculo(float pesagem, float result){
-        return result = (pesagem - pratoPeso) * valorKg;
+    public float calculo(){
+        return (this.pesagem - pratoPeso) * valorKg;
     }
     public static void main(String[] args) {
-        Uni3Exe06 calc = new Uni3Exe06(0,0);
         Scanner sc = new Scanner(System.in);
         System.out.print("Insira o peso do prato: ");
         float pesagem = sc.nextFloat();
-        float result = calc.calculo(pesagem, 0);
-        System.out.printf("O valor do prato do cliente é R$ %.2f%n", result);
+        Uni3Exe06 calc = new Uni3Exe06(pesagem);
+        System.out.printf("O valor do prato do cliente é R$ %.2f%n", calc.calculo());
         sc.close();
     }
 }

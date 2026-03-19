@@ -10,18 +10,18 @@ public class Uni3Exe07 {
         this.garrafa600 = garrafa600;
         this.garrafa2 = garrafa2;
     }
-    public float lata350(float lata350){
-        return lata350 * 350;
+    public float lata350(){
+        return this.lata350 * 350;
     }
-    public float garrafa600(float garrafa600){
-        return garrafa600 * 600;
+    public float garrafa600(){
+        return this.garrafa600 * 600;
     }
-    public float garrafa2(float garrafa2){
-        return garrafa2 * 2000;
+    public float garrafa2(){
+        return this.garrafa2 * 2000;
     }
 
     public static void main(String[] args) {
-        Uni3Exe07 classExec = new Uni3Exe07(0, 0, 0);
+        
         Scanner sc = new Scanner(System.in);
         System.out.print("Insira a quantidade de latas de 350ml: ");
         float lata350 = sc.nextFloat();
@@ -29,7 +29,8 @@ public class Uni3Exe07 {
         float garrafa600 = sc.nextFloat();
         System.out.print("Insira a quantidade de garrafas de 2l: ");
         float garrafa2 = sc.nextFloat();
-        float result = (classExec.lata350(lata350) + classExec.garrafa600(garrafa600) + classExec.garrafa2(garrafa2)) / 1000;
+        Uni3Exe07 classExec = new Uni3Exe07(lata350, garrafa600, garrafa2);
+        float result = (classExec.lata350() + classExec.garrafa600() + classExec.garrafa2()) / 1000;
         System.out.printf("O cliente comprou ao total %.2f litros.", result);
         sc.close();
     }

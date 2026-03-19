@@ -11,18 +11,17 @@ public class Uni3Exe01 {
         this.largura = largura;    
     }
 
-    public int terreno(int comprimento, int largura){
-        return (comprimento * largura);
+    public int terreno(){
+        return (this.comprimento * this.largura);
     }
-    public static void main(String[] args) {
-        Uni3Exe01 terreno = new Uni3Exe01(0,0);
+    public static void main(String[] args) {   
         Scanner sc = new Scanner(System.in);
         System.out.print("Insira o comprimento do terreno: ");
         int comprimento = sc.nextInt();
         System.out.print("Insira a largura do terreno: ");
         int largura = sc.nextInt();
-        int resultado = terreno.terreno(comprimento,largura);
-        System.out.println("Área do terreno: "+resultado);
+        Uni3Exe01 terreno = new Uni3Exe01(comprimento,largura);
+        System.out.println("Área do terreno: "+terreno.terreno());
         sc.close();
     }
 }

@@ -4,20 +4,20 @@ import java.util.Scanner;
 
 public class Uni3Exe08 {
     private final float dolarHoje = 5.65f;
-    private float dolarCliente,result;
+    private float dolarCliente;
 
     public Uni3Exe08(float dolarCliente){
         this.dolarCliente = dolarCliente;
     }
-    public float dolarToReal(float dolarCliente){
-        return dolarCliente * dolarHoje;
+    public float dolarToReal(){
+        return this.dolarCliente * dolarHoje;
     }
     public static void main(String[] args) {
-        Uni3Exe08 classExec = new Uni3Exe08(0);
         Scanner sc = new Scanner(System.in);
         System.out.print("Insira o valor em dólares: ");
         float dolarCliente = sc.nextFloat();
-        System.out.printf("O atendente deve devolver R$ %.2f para o cliente.",classExec.dolarToReal(dolarCliente));
+        Uni3Exe08 classExec = new Uni3Exe08(dolarCliente);
+        System.out.printf("O atendente deve devolver R$ %.2f para o cliente.",classExec.dolarToReal());
         sc.close();
     }
 }

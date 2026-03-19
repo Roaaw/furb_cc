@@ -6,22 +6,20 @@ public class Uni3Exe05 {
     private final float chip = 4f;
     private final float anel = 3.5f;
     private float qntdFrango;
-    private float result;
 
-    public Uni3Exe05(float qntdFrango, float result){
+    public Uni3Exe05(float qntdFrango){
         this.qntdFrango = qntdFrango;
-        this.result = result;
     }
-    public float calculoFrango(float qntdFrango, float result){
-        return result = ((qntdFrango * chip) + ((qntdFrango * anel)*2));
+    public float calculoFrango(){
+        return ((this.qntdFrango * chip) + ((this.qntdFrango * anel)*2));
     }
     public static void main(String[] args) {
-        Uni3Exe05 calculo = new Uni3Exe05(0, 0);
+        
         Scanner sc = new Scanner(System.in);
         System.out.print("Insira a quantidade de frangos: ");
         float qntdFrango = sc.nextFloat();
-        float resultado = calculo.calculoFrango(qntdFrango,0);
-        System.out.printf("O gasto total para marcar %s é %.2f%n",qntdFrango , resultado);
+        Uni3Exe05 calculo = new Uni3Exe05(qntdFrango);
+        System.out.printf("O gasto total para marcar %s é %.2f%n",qntdFrango , calculo.calculoFrango());
         sc.close();
     }
 }

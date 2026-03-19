@@ -5,27 +5,24 @@ import java.util.Scanner;
 public class Uni3Exe10 {
     private double cateto1;
     private double cateto2;
-    private double hipotenusa;
 
-    public Uni3Exe10(double hipotenusa, double cateto1, double cateto2){
-        this.hipotenusa = hipotenusa;
+    public Uni3Exe10(double cateto1, double cateto2){
         this.cateto1 = cateto1;
         this.cateto2 = cateto2; 
     }
 
-    public double hipotenusa(double cateto1, double cateto2){
-        return hipotenusa = Math.hypot(cateto1, cateto2);
+    public double hipotenusa(){
+        return Math.hypot(this.cateto1, this.cateto2);
     }
 
     public static void main(String[] args) {
-        Uni3Exe10 classExec = new Uni3Exe10(0, 0, 0);
         Scanner sc = new Scanner(System.in);
         System.out.print("Insira o cateto oposto:");
         float cateto1 = sc.nextFloat();
         System.out.print("Insira o cateto adjacente:");
         float cateto2 = sc.nextFloat();
-        double result = classExec.hipotenusa(cateto1, cateto2);
-        System.out.printf("A hipotenusa é: %.2f", result);
+        Uni3Exe10 classExec = new Uni3Exe10(cateto1, cateto2);
+        System.out.printf("A hipotenusa é: %.2f", classExec.hipotenusa());
         sc.close();
     }
 }

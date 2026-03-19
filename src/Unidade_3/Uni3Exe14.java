@@ -11,23 +11,21 @@ public class Uni3Exe14 {
         this.tempo = tempo;
     }
 
-    public float calcTempo(float distancia, float tempo){
-        return (distancia / tempo);
+    public float calcTempo(){
+        return (this.distancia / this.tempo);
     }
-    public float calcAutonomia(float distancia){
-        return ((distancia / autonomia) / 1000);
+    public float calcAutonomia(){
+        return ((this.distancia / autonomia) / 1000);
     }
     public static void main(String[] args) {
-        Uni3Exe14 classExec = new Uni3Exe14(0, 0);
         Scanner sc = new Scanner(System.in);
         System.out.print("Digite a distancia percorrida: ");
         float distancia = sc.nextFloat();
         System.out.print("Digite o tempo de viagem: ");
         float tempo = sc.nextFloat();
         sc.close();
-        float kmh = classExec.calcTempo(distancia, tempo);
-        float consumo = classExec.calcAutonomia(distancia);
-        System.out.printf("A velocidade média foi de %.2f km/h e a quantidade dde combustível usado foi de %.2f litros.", kmh, consumo);
+        Uni3Exe14 classExec = new Uni3Exe14(distancia, tempo);
+        System.out.printf("A velocidade média foi de %.2f km/h e a quantidade dde combustível usado foi de %.2f litros.", classExec.calcTempo(), classExec.calcAutonomia());
     }
 }
 /*

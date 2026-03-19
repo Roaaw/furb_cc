@@ -12,22 +12,21 @@ public class Uni3Exe13 {
         this.largura = largura;
     }
 
-    public float calcMetros(float altura, float largura){
-        return (altura * largura);
+    public float calcMetros(){
+        return (this.altura * this.largura);
     }
-    public float valorAzuleijo(float altura, float largura){
-        return calcMetros(altura, largura) * (valorAzuleijo * 9);
+    public float valorAzuleijo(){
+        return calcMetros() * (valorAzuleijo * 9);
     }
 
-    public static void main(String[] args) {
-        Uni3Exe13 classExec = new Uni3Exe13(0,0);
+    public static void main(String[] args) {        
         Scanner sc = new Scanner(System.in);
         System.out.print("Insira a altuda da parede: ");
         float altura = sc.nextFloat();
         System.out.print("Insira o comprimento da parede: ");
         float largura = sc.nextFloat();
-        float result = classExec.valorAzuleijo(altura,largura);
-        System.out.printf("O valor final é: %.2f%n", result);
+        Uni3Exe13 classExec = new Uni3Exe13(altura,largura);
+        System.out.printf("O valor final é: %.2f%n", classExec.valorAzuleijo());
         sc.close();
     }
 
