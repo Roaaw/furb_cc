@@ -3,26 +3,31 @@
 import java.util.Scanner;
 
 public class Uni4Exe02 {
+    Scanner sc = new Scanner(System.in);
     private float numero;
 
-    public Uni4Exe02(float numero){
-        this.numero = numero;
+    public Uni4Exe02(){
+        entrada();
+        saida();
     }
-    public float parImpar(){
-        return this.numero % 2;
+    private void entrada(){
+    System.out.print("Entre com um valor maior que 0: ");
+    numero = sc.nextFloat();
+    sc.close();
     }
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Entre com um valor maior que 0: ");
-        float numero = sc.nextFloat();
-        sc.close();
-        Uni4Exe02 classExec = new Uni4Exe02(numero);
-        if (classExec.parImpar() != 0){
+    private void saida(){
+        if (parImpar() != 0){
             System.out.println("Número é impar");
         }else{
             System.out.println("Número é par");
         }
+    }
+    private float parImpar(){
+        return this.numero % 2;
+    }
+
+    public static void main(String[] args) {
+        new Uni4Exe02();
     }
 }
 

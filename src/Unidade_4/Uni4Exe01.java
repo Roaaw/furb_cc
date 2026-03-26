@@ -29,10 +29,10 @@ public class Uni4Exe01 {
         System.out.printf("O salário total é: %.2f",salarioTotal);
     }
 
-    public float calculoSalario(){
+    private float calculoSalario(){
         return (this.horasMes * this.horasValor);
     }
-    public float calculoSalExtra(){
+    private float calculoSalExtra(){
         if (this.horasMes > 160){
             float result = ((this.horasMes - 160) * (this.horasValor / 2));
             return result;
