@@ -3,12 +3,27 @@
 import java.util.Scanner;
 
 public class Uni4Exe04 {
-    private float numero;
+    Scanner sc = new Scanner(System.in);
+    private float numero, result;
 
-    public Uni4Exe04(float numero){
-        this.numero = numero;
+    public Uni4Exe04(){
+        entrada();
+        saida();
     }
-    public float temDecimal(){
+    private void entrada(){
+        System.out.print("Escreva um numero maior que 0: ");
+        numero = sc.nextFloat();
+        sc.close();
+    }
+    private void saida(){
+        result = temDecimal();
+        if (result == 1) {
+            System.out.println("Casas decimais foram digitadas.");
+        }else{
+            System.out.println("Casas decimais não foram digitadas.");
+        }
+    }
+    private float temDecimal(){
         float result = numero % 1;
         if (result == 0) {
             return 0;
@@ -18,17 +33,7 @@ public class Uni4Exe04 {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Escreva um numero maior que 0: ");
-        float numero = sc.nextFloat();
-        sc.close();
-        Uni4Exe04 classExec = new Uni4Exe04(numero);
-        float result = classExec.temDecimal();
-        if (result == 1) {
-            System.out.println("Casas decimais foram digitadas.");
-        }else{
-            System.out.println("Casas decimais não foram digitadas.");
-        }
+        new Uni4Exe04();
     }
 }
 /*
