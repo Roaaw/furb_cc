@@ -3,11 +3,30 @@ package Unidade_4;
 import java.util.Scanner;
 
 public class Uni4Exe01 {
-    private float horasMes, horasValor;
+    Scanner sc = new Scanner(System.in);
+    private float horasMes, horasValor, salarioTotal, salarioExtra;
 
-    public Uni4Exe01(float horasMes, float horasValor){
-        this.horasMes = horasMes;
-        this.horasValor = horasValor;
+    public Uni4Exe01(){
+        entrada();
+        logica();
+        saida();
+    }
+    private void entrada(){
+        System.out.print("Entre com as horas trabalhadas no mês: ");
+        horasMes = sc.nextFloat();
+        System.out.print("Entre com o valor pago por hora: ");
+        horasValor = sc.nextFloat();
+        sc.close();
+    }
+    private void logica(){
+        salarioTotal = calculoSalario();
+        if (salarioTotal > 160){
+            salarioExtra = calculoSalExtra();
+            salarioTotal = salarioTotal + salarioExtra;
+        }
+    }
+    private void saida(){
+        System.out.printf("O salário total é: %.2f",salarioTotal);
     }
 
     public float calculoSalario(){
@@ -21,20 +40,8 @@ public class Uni4Exe01 {
         return 0;
     }
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Entre com as horas trabalhadas no mês: ");
-        float horasMes = sc.nextFloat();
-        System.out.print("Entre com o valor pago por hora: ");
-        float horasValor = sc.nextFloat();
-        Uni4Exe01 classExec = new Uni4Exe01(horasMes, horasValor);
-        float salarioTotal = classExec.calculoSalario();
-        if (salarioTotal > 160){
-            float salarioExtra = classExec.calculoSalExtra();
-            salarioTotal = salarioTotal + salarioExtra;
-        }
-        System.out.printf("O salário total é: %.2f",salarioTotal);
-        sc.close();
+    public static void main(String[] args) {  
+        new Uni4Exe01();
     }
 }
 /*
