@@ -3,28 +3,28 @@
 import java.util.Scanner;
 
 public class Uni4Exe05 {
-    private String cor; 
+    Scanner sc = new Scanner(System.in);
+    private String cor, isAzul; 
 
-    public Uni4Exe05(String cor){
-        this.cor = cor;
+    public Uni4Exe05(){
+        entrada();
+        saida();
     }
-
-    public String isAzul(){
-        String isAzul;
+    private void entrada(){
+        System.out.println("A cor é azul?");
+        cor = sc.next();
+        sc.close();
+    }
+    private void saida(){
         if(cor.equalsIgnoreCase("Sim")){
             isAzul = "Sim";
         }else{
             isAzul = "Não";
         }
-        return isAzul;
+        System.out.println(isAzul);
     }
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("A cor é azul?");
-        String cor = sc.next();
-        sc.close();
-        Uni4Exe05 classExec = new Uni4Exe05(cor);
-        System.out.println(classExec.isAzul());
+        new Uni4Exe05();
     }
 }
 
