@@ -9,7 +9,6 @@ public class Uni4Exe08 {
     public Uni4Exe08(){
         entrada();
         logica();
-        saida();
     }
     private void entrada(){
         System.out.print("Informe a letra: ");
@@ -23,10 +22,21 @@ public class Uni4Exe08 {
         }
 
     }
-    private void saida(){
-
-    }
     public static void main(String[] args) {
         new Uni4Exe08();
     }
 }
+/*
+TESTE 1
+
+Informe a letra: u
+É vogal.
+TESTE 2
+
+Informe a letra: b
+Não é Vogal
+TESTE 3
+
+Informe a letra: A
+É vogal.
+ */
