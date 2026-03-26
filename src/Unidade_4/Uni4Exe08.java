@@ -1,8 +1,32 @@
 ﻿package Unidade_4;
 
+import java.util.Scanner;
+
 public class Uni4Exe08 {
+    Scanner sc = new Scanner(System.in);
+    private char letra;
+
+    public Uni4Exe08(){
+        entrada();
+        logica();
+        saida();
+    }
+    private void entrada(){
+        System.out.print("Informe a letra: ");
+        letra = sc.next().toUpperCase().charAt(0);
+    }
+    private void logica(){
+        if (letra == 'A' || letra == 'E' || letra == 'I' || letra == 'O' || letra == 'U') {
+            System.out.print("É vogal.");
+        } else {
+            System.out.print("Não é Vogal");
+        }
+
+    }
+    private void saida(){
+
+    }
     public static void main(String[] args) {
-        System.out.println("Uni4Exe08 - placeholder");
-        // TODO: implementar exercício 8 da unidade 4
+        new Uni4Exe08();
     }
 }
