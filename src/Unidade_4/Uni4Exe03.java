@@ -3,13 +3,28 @@
 import java.util.Scanner;
 
 public class Uni4Exe03 {
-    private int numero1, numero2;
+    Scanner sc = new Scanner(System.in);
+    private int numero1, numero2, result;
 
-    public Uni4Exe03(int numero1, int numero2){
-        this.numero1 = numero1;
-        this.numero2 = numero2;
+    public Uni4Exe03(){
+        entrada();
+        saida();
     }
-    public int escolhaMaior(){
+    private void entrada(){
+        System.out.println("Insira dois valores diferentes: ");
+        numero1 = sc.nextInt();
+        numero2 = sc.nextInt();
+        sc.close();
+    }
+    private void saida(){
+        result = escolhaMaior();
+        if(result == numero1){
+            System.out.printf("O valor %s é maior do que o valor %s", numero1, numero2);
+        }else{
+            System.out.printf("O valor %s é maior do que o valor %s", numero2, numero1);
+        }
+    }
+    private int escolhaMaior(){
         if(numero1 > numero2){
             return numero1;
         }else{
@@ -17,18 +32,7 @@ public class Uni4Exe03 {
         }
     }
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Insira dois valores diferentes: ");
-        int numero1 = sc.nextInt();
-        int numero2 = sc.nextInt();
-        sc.close();
-        Uni4Exe03 classExec = new Uni4Exe03(numero1, numero2);
-        int result = classExec.escolhaMaior();
-        if(result == numero1){
-            System.out.printf("O valor %s é maior do que o valor %s", numero1, numero2);
-        }else{
-            System.out.printf("O valor %s é maior do que o valor %s", numero2, numero1);
-        }
+        new Uni4Exe03();
     }
 }
 /*
