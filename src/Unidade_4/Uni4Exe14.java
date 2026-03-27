@@ -31,13 +31,15 @@ public class Uni4Exe14 {
                 result = "Válida";
             }else if (dia == 29 && ano % 4 == 0 && !(ano % 100 == 0 && ano % 400 !=0)){
                 result = "Válida";
+            }else{
+                result = "Não válida";
             }
         }else{
                 result = "Não válida";
             }
     }
     private void saida(){
-        System.out.println(result);
+        System.out.print(result);
     }
     public static void main(String[] args) {
         new Uni4Exe14();
