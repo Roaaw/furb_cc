@@ -6,7 +6,6 @@ public class Uni4Exe24 {
     Scanner sc = new Scanner(System.in);
     private int valor1, valor2, valor3, opcao;
     private String result;
-    private boolean loop = true;
 
     public Uni4Exe24(){
         entrada();
