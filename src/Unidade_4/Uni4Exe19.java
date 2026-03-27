@@ -1,6 +1,5 @@
 ﻿package Unidade_4;
 
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Uni4Exe19 {
