@@ -45,3 +45,53 @@ public class Uni4Exe25 {
         new Uni4Exe25();
     }
 }
+/*
+TESTE 1
+
+Informe dois números: 5  
+3
+1-Soma
+2-Diferença
+3-Produto
+4-Divisão
+Escolha uma opção: 1
+8
+TESTE 2
+
+Informe dois números: 5
+3
+1-Soma
+2-Diferença
+3-Produto
+4-Divisão
+Escolha uma opção: 2
+2
+TESTE 3
+
+Informe dois números: 5
+3
+1-Soma
+2-Diferença
+3-Produto
+4-Divisão
+Escolha uma opção: 3
+15
+TESTE 4
+Informe dois números: 15
+3
+1-Soma
+2-Diferença
+3-Produto
+4-Divisão
+Escolha uma opção: 4
+5
+TESTE 5
+Informe dois números: 5
+0
+1-Soma
+2-Diferença
+3-Produto
+4-Divisão
+Escolha uma opção: 4
+O denominador não pode ser 0
+*/
