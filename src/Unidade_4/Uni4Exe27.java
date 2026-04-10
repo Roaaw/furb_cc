@@ -1,5 +1,6 @@
 package Unidade_4;
 
+import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
@@ -52,16 +53,21 @@ public class Uni4Exe27 {
         }else{
             min = (hora * 60) + (minChegada - minSaida);
         }
-        
-        if (min <= 75){
+
+        if (min <= 74){
             valorCobrado = valorHora;
-        }else if(min > 75 && min <= 240){
+        }else if(min > 74 && min <= 149){
             valorCobrado = (valorHora * hora);
-        }else if (min > 240){
-            valorCobrado = valorHora + (valorHora * hora) + (valorHora * 2f);
+        }else if(min > 149 && min <= 209 ){
+            valorCobrado = (valorHora * (hora - 1f)) + 7.50f;
+        }else if(min > 209 && min <= 239 ){
+            valorCobrado = (valorHora * (hora - 2f)) + (7.50f * 2f);
+        }else if (min > 239){
+            valorCobrado = (valorHora * (hora - 2f)) + (7.50f * 2f) + 10f;
         }
     }
     private void saida(){
+        df.setRoundingMode(RoundingMode.DOWN);
         //System.out.println(df.format(min));
         //System.out.printf("%s:%s\n",df.format(min / 60), df.format(min % 60));
         System.out.printf("Preço cobrado: R$%.2f",valorCobrado);
