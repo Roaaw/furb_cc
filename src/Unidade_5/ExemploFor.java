@@ -19,5 +19,6 @@ public class ExemploFor {
             int idade = sc.nextInt();
             System.out.println("Nome "+name+"\nIdade "+idade);
         }
+        sc.close();
     }
 }
