@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Uni5Exe07 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.print("Insira a quantidade de entradas: ");
         int n = sc.nextInt();
         float num = 0;
         float temp = 0;
