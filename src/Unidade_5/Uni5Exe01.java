@@ -12,5 +12,6 @@ public class Uni5Exe01 {
             }else
                 System.out.println(i+" Ímpar");
         }
+        sc.close();
     }
 }
