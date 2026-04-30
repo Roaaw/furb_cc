@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Uni5Exe09 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.print("Informe a quantidade de entradas: ");
         int n = sc.nextInt();
         int vinteM = 0;
         String listaNome = "";
