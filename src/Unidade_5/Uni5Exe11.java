@@ -9,8 +9,9 @@ public class Uni5Exe11 {
             }else if (i == 2){
                 b+=3;
             }else if(i > 2){
-                b *= 3;
+                b += b * 3;
             }
+            System.out.printf("Hora %s, Biscoito Quebrado: %s\n",i,b);
         }
         System.out.println("Número de biscoitos quebrados em 16 horas: "+b);
     }
