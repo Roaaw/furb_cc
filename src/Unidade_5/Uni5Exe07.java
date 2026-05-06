@@ -11,7 +11,6 @@ public class Uni5Exe07 {
         float temp = 0;
         float temp2 = 0;
         for(int i=1; i<=n; i++){
-            // num1 = num;
             num = sc.nextFloat();
             if(num > temp || temp == 0){
                 temp = num;

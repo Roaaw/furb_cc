@@ -7,16 +7,16 @@ public class Uni5Exe08 {
         Scanner sc = new Scanner(System.in);
         System.out.print("Insira a quantidade de entradas: ");
         int n = sc.nextInt();
-        int numNeg = 0;
-        int numPos = 0;
-        int somaPos = 0;
-        int result = 0;
+        float numNeg = 0;
+        float numPos = 0;
+        float somaPos = 0;
+        float result = 0;
         for(int i=1; i<=n; i++){
             int num = sc.nextInt();
-            if(num < 0){
-                if(num < numNeg || numNeg == 0){
-                    numNeg = num;
-                }
+            if(num < numNeg || numNeg == 0){
+                //if(num < numNeg || numNeg == 0){
+                numNeg = num;
+                //}
             }else{
                 numPos++;
                 somaPos += num;
