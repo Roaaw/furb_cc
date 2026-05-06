@@ -13,7 +13,7 @@ public class Uni5Exe08 {
         float result = 0;
         for(int i=1; i<=n; i++){
             int num = sc.nextInt();
-            if(num < numNeg || numNeg == 0){
+            if(num < numNeg){
                 //if(num < numNeg || numNeg == 0){
                 numNeg = num;
                 //}
