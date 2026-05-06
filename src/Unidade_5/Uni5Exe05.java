@@ -16,7 +16,11 @@ public class Uni5Exe05 {
             }else{
                 r+=2;
             }
-            System.out.println(r);
+            if(i == n){
+                System.out.print(r);
+            }else{
+                System.out.print(r+",");
+            }
         }
         sc.close();
     }
