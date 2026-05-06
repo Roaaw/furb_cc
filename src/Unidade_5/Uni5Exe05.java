@@ -9,14 +9,14 @@ public class Uni5Exe05 {
         int r2 = 4;
         System.out.print("Informe o número de repetições: ");
         int n = sc.nextInt();
-        for(int i=0; i<=n; i++){
+        for(int i=0; i<=n-1; i++){
             if(i % 2 == 0){
                 r = r2 *2;
                 r2 = r;
             }else{
                 r+=2;
             }
-            if(i == n){
+            if(i == n-1){
                 System.out.print(r);
             }else{
                 System.out.print(r+",");
