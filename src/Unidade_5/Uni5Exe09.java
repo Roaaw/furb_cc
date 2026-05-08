@@ -13,12 +13,14 @@ public class Uni5Exe09 {
             System.out.print("Digite o nome do aluno: ");
             String nome = sc.next();
             System.out.print("Digite a idade do aluno: ");
-            int idade = sc.nextInt();
+            int idade = Integer.parseInt(sc.nextLine());
             if(idade == 18){
                 if(listaNome == ""){
                     listaNome += nome;
-                }else{
+                }else if(i == n-1){
                     listaNome += " e "+nome;
+                }else{
+                    listaNome += ", "+nome;
                 }
             }
             if(idade >= 20){
