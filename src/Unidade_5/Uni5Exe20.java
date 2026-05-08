@@ -36,6 +36,7 @@ public class Uni5Exe20 {
             }
             tempo+= 50;
         }
+        sc.close();
         System.out.println(text);
     }
 }
