@@ -9,14 +9,17 @@ public class Uni5Exe15 {
         String nome = "";
         boolean exit = true;
         while (exit) {
+            System.out.print("Nome do aluno: ");
             nome = sc.next();
             if(nome.toLowerCase().equals("fim")){
                 exit = false;
             }else{
                 for(int i=0; i <=1; i++){
                     if(nota == 0){
+                        System.out.print("Digite a nota: ");
                         nota = sc.nextFloat();
                     }else{
+                        System.out.print("Digite a próxima nota: ");
                         nota += sc.nextFloat();
                     }
                 }
@@ -24,6 +27,7 @@ public class Uni5Exe15 {
                 nota = 0;
                 }
         }
+        System.out.println("-");
         sc.close();
     }
 }
