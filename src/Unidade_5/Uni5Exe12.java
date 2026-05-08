@@ -15,7 +15,11 @@ public class Uni5Exe12 {
                 t++;
                 for(int j=1; j<=t; j++){
                     k++;
-                    System.out.print(k);
+                    if(k < 10){
+                        System.out.print(k+"  ");
+                    }else{
+                        System.out.print(k+" ");
+                    }
                 }
                 System.out.println();
             }
