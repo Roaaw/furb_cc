@@ -30,5 +30,6 @@ public class Uni5Exe19 {
             }
         }
         System.out.println("O valor total recebido foi de R$"+df.format(soma));
+        sc.close();
     }
 }
