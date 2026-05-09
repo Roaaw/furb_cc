@@ -22,9 +22,7 @@ public class Uni5Exe25 {
                     placar += "\n       Esquerda Ganhou";
                 }
             }
-            // System.out.println(d - e);
             System.out.println(placar);
-            // System.out.println(e - d);
         }
     }
 }
