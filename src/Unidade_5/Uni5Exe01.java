@@ -26,7 +26,6 @@ public class Uni5Exe01 {
                 saida();
             }
         }
-        System.out.println(count);
     }
     private void saida(){
         System.out.println(output);
