@@ -1,9 +1,9 @@
 package Unidade_5;
 
 public class Uni5Exe03 {
-    double num = 1;
-    double div;
-    double result = 0;
+    private double num = 1;
+    private double div;
+    private double result = 0;
 
     public Uni5Exe03(){
         logica();

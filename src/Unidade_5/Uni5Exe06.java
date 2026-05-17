@@ -4,8 +4,8 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Uni5Exe06 {
-    Scanner sc = new Scanner(System.in);
-    DecimalFormat df = new DecimalFormat("0.00");
+    private Scanner sc = new Scanner(System.in);
+    private DecimalFormat df = new DecimalFormat("0.00");
     private float a;
     private float soma = 0;
     private float result = 0;

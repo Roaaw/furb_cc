@@ -3,7 +3,7 @@ package Unidade_5;
 import java.util.Scanner;
 
 public class Uni5Exe07 {
-    Scanner sc = new Scanner(System.in);
+    private Scanner sc = new Scanner(System.in);
     private int n = 0;
     private float num = 0;
     private float temp = 0;
