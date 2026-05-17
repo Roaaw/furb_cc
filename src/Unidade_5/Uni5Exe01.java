@@ -5,8 +5,7 @@ import java.util.Scanner;
 public class Uni5Exe01 {
     Scanner sc = new Scanner(System.in);
     int input;
-    String output;
-    int count = 0;
+    private String output;
     public Uni5Exe01(){
         logica();
     }
@@ -17,7 +16,6 @@ public class Uni5Exe01 {
     private void logica(){
         for(int i = 0; i<20; i++){
             entrada();
-            count++;
             if(i % 2 == 0){
                 output = "Par";
                 saida();
