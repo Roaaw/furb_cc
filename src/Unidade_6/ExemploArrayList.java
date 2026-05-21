@@ -10,6 +10,6 @@ public class ExemploArrayList {
         nomes.add("Joao");//pos 0
         nomes.add(0, "Ze");//move Joao para pos 1 e ocupa pos 0
         nomes.add("a");
-        nom
+        sc.close();
     }
 }
