@@ -19,7 +19,7 @@ public class Uni6Exe01Array {
     }
     private void output(){
         System.out.println("Números em ordem inversa a digitada:");
-            System.out.println((numeros.reversed().toString().replaceAll("\[\]", "")));
+            System.out.println((numeros.reversed().toString().replace("[", "").replace("]", "")));
         }
     public static void main(String[] args) {
         new Uni6Exe01Array();
