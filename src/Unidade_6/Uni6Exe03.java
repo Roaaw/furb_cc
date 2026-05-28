@@ -7,7 +7,7 @@ public class Uni6Exe03 {
     private Scanner sc = new Scanner(System.in);
     private DecimalFormat df = new DecimalFormat("0.00");
     private double[] valores = new double[12];
-    private String[] texto = new String[12];
+    private String[] texto = new String[3];
 
     public Uni6Exe03(){
         lerValores();
@@ -15,6 +15,7 @@ public class Uni6Exe03 {
         escreverValores();
     }
     private void lerValores(){
+        texto[0] = "";
         for(int i = 0; i < 12; i++){
             System.out.print("Digite um valor: ");
             valores[i] = sc.nextDouble();
@@ -22,11 +23,13 @@ public class Uni6Exe03 {
         }
     }
     private void acrescimoVetor(){
+        texto[1] = "";
+        texto[2] = "";
         for(int i = 0; i < 12; i++){
-            if(i / 2 == 1){
+            if(i % 2 == 0){
                 valores[i] += valores[i] * 0.05f;
                 texto[1] += "Valor"+i+" = "+df.format(valores[i])+"\n";
-            }else if(i / 2 != 1){
+            }else if(i % 2 != 0){
                 valores[i] += valores[i] * 0.02f;
                 texto[2] += "Valor"+i+" = "+df.format(valores[i])+"\n";
             }
@@ -36,6 +39,9 @@ public class Uni6Exe03 {
         System.out.println("Valores digitados: "+texto[0]);
         System.out.println("Valores com + 5%: "+texto[1]);
         System.out.println("Valores com + 2%: "+texto[2]);
+        for (Double item : valores) {
+            System.out.println("Valores Atualizados: "+df.format(item));
+        }
     }
     public static void main(String[] args) {
         new Uni6Exe03();
