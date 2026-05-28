@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Uni6Exe07 {
     private Scanner sc = new Scanner(System.in);
-    private int tamanho = 0; // < 20
+    private int tamanho = 0; // <= 20
     private int[] numero;
     private int j = 0;
     private boolean repetido = false;
