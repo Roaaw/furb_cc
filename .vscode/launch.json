@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Uni5Exe28",
+            "request": "launch",
+            "mainClass": "Unidade_5.Uni5Exe28",
+            "projectName": "furb_cc_614537d9"
+        },
+        {
+            "type": "java",
             "name": "Uni5Exe27",
             "request": "launch",
             "mainClass": "Unidade_5.Uni5Exe27",
