@@ -1,13 +1,14 @@
 package Unidade_6;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Uni6Exe03Array {
     private Scanner sc = new Scanner(System.in);
     private DecimalFormat df = new DecimalFormat("0.00");
-    private double[] valores = new double[12];
-    private String[] texto = new String[3];
+    private ArrayList<Double> valores = new ArrayList<>();
+    private ArrayList<String> texto = new ArrayList<>();
 
     public Uni6Exe03Array(){
         lerValores();
@@ -15,32 +16,42 @@ public class Uni6Exe03Array {
         escreverValores();
     }
     private void lerValores(){
-        texto[0] = "";
         for(int i = 0; i < 12; i++){
             System.out.print("Digite um valor: ");
-            valores[i] = sc.nextDouble();
-            texto[0] += "Valor"+(i+1)+" = "+df.format(valores[i])+"\n";
+            valores.add(sc.nextDouble());
+            if(texto.size() >= 1){
+                texto.set(0, texto.get(0)+"Valor"+i+" = "+df.format(valores.get(i))+"\n");
+            }else{
+                texto.add("Valor"+(i+1)+" = "+df.format(valores.get(i))+"\n");
+            }
         }
     }
     private void acrescimoVetor(){
-        texto[1] = "";
-        texto[2] = "";
         for(int i = 0; i < 12; i++){
             if(i % 2 == 0){
-                valores[i] += valores[i] * 0.05f;
-                texto[1] += "Valor"+i+" = "+df.format(valores[i])+"\n";
+                valores.set(i, valores.get(i)+(valores.get(i) * 0.05f));
+                if(texto.size() >= 2){
+                    texto.set(1, texto.get(1)+"Valor"+i+" = "+df.format(valores.get(i))+"\n");    
+                }else{
+                    texto.add(1, "Valor"+i+" = "+df.format(valores.get(i))+"\n");
+                }
             }else if(i % 2 != 0){
-                valores[i] += valores[i] * 0.02f;
-                texto[2] += "Valor"+i+" = "+df.format(valores[i])+"\n";
+                valores.set(i, valores.get(i)+(valores.get(i) * 0.02f));
+                if(texto.size() >= 3){
+                    texto.set(2, texto.get(2)+"Valor"+i+" = "+df.format(valores.get(i))+"\n");
+                }else{
+                    texto.add(2, "Valor"+i+" = "+df.format(valores.get(i))+"\n");
+                }
             }
         }
     }
     private void escreverValores(){
-        System.out.println("Valores digitados: "+texto[0]);
-        System.out.println("Valores com + 5%: "+texto[1]);
-        System.out.println("Valores com + 2%: "+texto[2]);
+        System.out.println("Valores digitados: \n"+texto.get(0));
+        System.out.println("Valores com + 5%: \n"+texto.get(1));
+        System.out.println("Valores com + 2%: \n"+texto.get(2));
+        System.out.println("Valores Atualizados: ");
         for (Double item : valores) {
-            System.out.println("Valores Atualizados: "+df.format(item));
+            System.out.println(df.format(item));
         }
     }
     public static void main(String[] args) {
