@@ -1,14 +1,16 @@
 package Unidade_6;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Uni6Exe07Array {
     private Scanner sc = new Scanner(System.in);
     private int tamanho = 0; // <= 20
-    private int[] numero;
+    // private int[] numero;
+    private ArrayList<Integer> numero = new ArrayList<>();
     private int j = 0;
     private boolean repetido = false;
-    private int bolha;
+    // private int bolha;
 
     public Uni6Exe07Array(){
         tamVetor();
@@ -23,14 +25,14 @@ public class Uni6Exe07Array {
             }
             System.out.print("Tamanho vetor: ");
             tamanho = sc.nextInt();
-            numero = new int[tamanho];
+            // numero = new int[tamanho];
         } while (tamanho > 20);
     }
     private void entradaVetor(){
         for (int i = 0; i < tamanho; i++){
             do {    
                 System.out.println("Digite um numero inteiro");
-                numero[i] = sc.nextInt();
+                numero.add(sc.nextInt());
                 if (i > 0){
                     j = i;
                     checarValor();
@@ -40,7 +42,7 @@ public class Uni6Exe07Array {
     }
     private void checarValor(){
         for (int i = 0; i < j; i++){
-            if(numero[i] == numero[j]){
+            if(numero.get(i).equals(numero.get(j))){
                 repetido = true;
                 break;
             }else{
@@ -53,17 +55,8 @@ public class Uni6Exe07Array {
         for (int item : numero) {
             System.out.print("["+item+"]");
         }
-        for(int i = 0; i < tamanho; i++){
-            if(i+1 >= tamanho){
-                break;
-            }else if(numero[i] > numero[i+1]){
-                bolha = numero[i];
-                numero[i] = numero[i+1];
-                numero[i+1] = bolha;
-                i = -1;
-            }
-        }
         System.out.print("\nVetor ordenado: ");
+        numero.sort(null);
         for (int item : numero) {
             System.out.print("["+item+"]");
         }
