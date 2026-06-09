@@ -13,7 +13,7 @@ public class Uni6Exe09Array {
     private ArrayList<Integer> sexo = new ArrayList<>();
     private ArrayList<Integer> idade = new ArrayList<>();
     private ArrayList<Double> nota = new ArrayList<>();
-    private int tamVetor;
+    // private int tamVetor;
     private int indiceVetor = 0;
     private int opcaoMenu = 0;
     // private double[] media = new double[2];
@@ -22,7 +22,7 @@ public class Uni6Exe09Array {
     private int temp = Integer.MAX_VALUE;
 
     public Uni6Exe09Array(){
-        tamanhoVetor();
+        // tamanhoVetor();
         do {
             System.out.print("\n1-Iniciar pesquisa\n0-Sair\nEscolha uma opção: ");
             opcaoMenu = sc.nextInt();
@@ -45,13 +45,13 @@ public class Uni6Exe09Array {
         } while (opcaoMenu != 0);
     }
 
-    private void tamanhoVetor(){
-        System.out.printf("Informe o tamanho do vetor: ");
-        tamVetor = sc.nextInt();
+    // private void tamanhoVetor(){
+    //     System.out.printf("Informe o tamanho do vetor: ");
+    //     tamVetor = sc.nextInt();
         // sexo = new int[tamVetor];
         // nota = new double[tamVetor];
         // idade = new int[tamVetor];
-    }
+    // }
 
     private void sexoCliente(){
         System.out.print("\n1-Feminino\n2-Masculino\nInforme o seu sexo: ");
