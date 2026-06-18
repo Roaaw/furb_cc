@@ -37,10 +37,6 @@ public class Liga_4 {
         } while (opcaoMenu != '2');
     }
     private void iniciarJogo(){
-        // tabuleiro[5][0] = 'V';
-        // tabuleiro[4][1] = 'V';
-        // tabuleiro[3][2] = 'V';
-        // tabuleiro[2][3] = 'V';
         do {
             if(turnos % 2 == 0){
                 imprimirTabuleiro();
@@ -48,19 +44,24 @@ public class Liga_4 {
                 turnos++;
                 System.out.println();
                 System.out.println();
+                if(jogadas >=4){
+                // verificaVencedorLinha(0);
+                // verificaVencedorColuna(0);
+                verifcaVencedorDiagonal(0);
+                }
             }else{
                 imprimirTabuleiro();
                 botSelect();
                 turnos++;
                 System.out.println();
                 System.out.println();
+                if(jogadas >=4){
+                // verificaVencedorLinha(1);
+                // verificaVencedorColuna(1);
+                verifcaVencedorDiagonal(1);
+                }
             }
             jogadas++;
-            if(jogadas >=4){
-                // verificaVencedorLinha();
-                // verificaVencedorColuna();
-                verifcaVencedorDiagonal();
-            }
         } while (vencedor != true);
     }
 //Inicia Vetor Tabuleiro e Preenche com "B"
@@ -145,40 +146,33 @@ public class Liga_4 {
         }
     }
 //Verificação de vencedor na linha
-    private void verificaVencedorLinha(){
+    private void verificaVencedorLinha(int playerId){
         zerarSequencia();
         for(int i = 5; i >= 0; i--){
             for(int k = 0; k < 7; k++){
                 if(tabuleiro[i][k] != 'B'){
-                    if(tabuleiro[i][k] == 'V'){
+                    if(tabuleiro[i][k] == playerCor[playerId]){
                         if(k > 0){
-                            if(tabuleiro[i][k-1] == 'V'){
-                                sequencia[0]++;
+                            if(tabuleiro[i][k-1] == playerCor[playerId]){
+                                sequencia[playerId]++;
                             }else{
-                                sequencia[0] = 1;
+                                sequencia[playerId] = 1;
                             }
                         }else{
-                            sequencia[0]++;
+                            sequencia[playerId]++;
                         }
-                        sequencia[1] = 0;
-                        mensagemVitoria(0);
-                        if(mensagemVitoria(-1) == 1){
-                            break;
-                        }
-                    }else if(tabuleiro[i][k] == 'A'){
-                        if(k > 0){
-                            if(tabuleiro[i][k-1] == 'A'){
-                                sequencia[1]++;
-                            }else{
-                                sequencia[1] = 1;
+                        if(playerId == 0){
+                            sequencia[1] = 0;
+                            mensagemVitoria(0);
+                            if(mensagemVitoria(-1) == 1){
+                                break;
                             }
-                        }else{
-                            sequencia[1]++;
-                        }
-                        sequencia[0] = 0;
-                        mensagemVitoria(1);
-                        if(mensagemVitoria(-1) == 1){
-                            break;
+                        }else if (playerId == 1){
+                            sequencia[0] = 0;
+                            mensagemVitoria(1);
+                            if(mensagemVitoria(-1) == 1){
+                                break;
+                            }
                         }
                     }
                 }
@@ -190,42 +184,34 @@ public class Liga_4 {
         }
     }
 //Verificação de vencedor na coluna
-    private void verificaVencedorColuna(){
+    private void verificaVencedorColuna(int playerId){
         zerarSequencia();
         for(int i = 0; i < 7; i++){
             for(int k = 5; k >= 0; k--){
                 if(tabuleiro[k][i] != 'B'){
-                    if(tabuleiro[k][i] == 'V'){
+                    if(tabuleiro[k][i] == playerCor[playerId]){
                         if(k < 5){
-                            if(tabuleiro[k+1][i] == 'V'){
-                                sequencia[0]++;
+                            if(tabuleiro[k+1][i] == playerCor[playerId]){
+                                sequencia[playerId]++;
                             }else{
-                                sequencia[0] = 1;
+                                sequencia[playerId] = 1;
                             }
                         }else{
-                            sequencia[0]++;
+                            sequencia[playerId]++;
                         }
-                        sequencia[1] = 0;
-                        mensagemVitoria(0);
-                        if(mensagemVitoria(-1) == 1){
-                            break;
-                        }
-                    }else if(tabuleiro[k][i] == 'A'){
-                        if(k < 5){
-                            if(tabuleiro[k+1][i] == 'A'){
-                                sequencia[1]++;
-                            }else{
-                                sequencia[1] = 1;
+                        if(playerId == 0){
+                            sequencia[1] = 0;
+                            mensagemVitoria(0);
+                            if(mensagemVitoria(-1) == 1){
+                                break;
                             }
-                        }else{
-                            sequencia[1]++;
+                        }else if (playerId == 1){
+                            sequencia[0] = 0;
+                            mensagemVitoria(1);
+                            if(mensagemVitoria(-1) == 1){
+                                break;
+                            }
                         }
-                        sequencia[0] = 0;
-                        mensagemVitoria(1);
-                        if(mensagemVitoria(-1) == 1){
-                            break;
-                        }
-                        
                     }
                 }
             }
@@ -236,65 +222,65 @@ public class Liga_4 {
         }
     }
 //Verificação de vencedor na diagonal
-    private void verifcaVencedorDiagonal(){
+    private void verifcaVencedorDiagonal(int playerId){
         zerarSequencia();
-        for(int i = 5; i >= 0; i--){
+        for(int i = 5; i >= 0; i --){
             for(int k = 0; k < 7; k++){
-                if(tabuleiro[i][k] == 'V'){
-                    sequencia[0]++;
-                    for(int j = 1; j < 4; j++){
-                        if(i < 3 && k < 3){//Verifica Diagonal Baixo > \/
-                            if(tabuleiro[i+j][k-j] == 'V'){
-                                System.out.println("A");
-                                sequencia[0]++;
+                int indice = k;
+                if(indice < 4){
+                    indice++;
+                }else{
+                    indice = 4;
+                }
+                if(tabuleiro[i][k] != 'B'){
+                    if(tabuleiro[i][k] == playerCor[playerId]){
+                        if(sequencia[playerId] == 0){
+                            sequencia[playerId]++;
+                        }
+                        if(i > 2 && k <= 3){// diagonal > cima
+                            if(tabuleiro[i-indice][k+indice] == playerCor[playerId]){
+                                System.out.println("1 Coluna "+(i-indice)+"Linha "+(k+indice));
+                                sequencia[playerId]++;
+                            }else{
+                                sequencia[playerId] = 1;
                             }
-                        }else if(i > 2 && k < 3){//Verifica Diagonal Cima >/\
-                            if(tabuleiro[i-j][k+j] == 'V'){
-                                sequencia[0]++;
-                                System.out.println("B");
+                        }else if(i > 2 && k >= 3){// diagonal < cima
+                            if(tabuleiro[i-indice][k-indice] == playerCor[playerId]){
+                                System.out.println("2 Coluna "+(i-indice)+"Linha "+(k-indice));
+                                sequencia[playerId]++;
+                            }else{
+                                sequencia[playerId] = 1;
                             }
+                        }else if(i < 3 && k <= 3){// diagonal > baixo
+                            if(tabuleiro[i+indice][k-indice] == playerCor[playerId]){
+                                System.out.println("3 Coluna "+(i+indice)+"Linha "+(k-indice));
+                                sequencia[playerId]++;
+                            }else{
+                                sequencia[playerId] = 1;
+                            }
+                        }else if(i < 3 && k >=3){// diagonal < baixo
+                            if(tabuleiro[i+indice][k+indice] == playerCor[playerId]){
+                                System.out.println("4 Coluna "+(i+indice)+"Linha "+(k+indice));
+                                sequencia[playerId]++;
+                            }else{
+                                sequencia[playerId] = 1;
+                            }
+                        }
+                        if(playerId == 0){
+                            sequencia[1] = 0;
                             mensagemVitoria(0);
                             if(mensagemVitoria(-1) == 1){
                                 break;
                             }
-                        }else if(i > 2 && k == 3){//Verifica Ambas Diagonais Cima >/\ </\
-                            if(tabuleiro[i-j][k+j] == 'V'){
-                                System.out.println("C");
-                                sequencia[0]++;
-                            }
-                            if(tabuleiro[i-j][k-j] == 'V'){
-                                System.out.println("D");
-                                sequencia[0]++;
-                            }
-                        }else if(i < 3 && k == 3){//Verifica Ambas Diagonais Baixo >\/ <\/
-                            if(tabuleiro[i+j][k+j] == 'V'){
-                                System.out.println("C");
-                                sequencia[0]++;
-                            }
-                            if(tabuleiro[i+j][k-j] == 'V'){
-                                System.out.println("D");
-                                sequencia[0]++;
-                            }
-                        }else if(i < 3 && k > 3){//Verifica Diagonal Baixo > \/
-                            if(tabuleiro[i+j][k-j] == 'V'){
-                                System.out.println("A");
-                                sequencia[0]++;
-                            }
-                        }else if(i > 2 && k > 3){//Verifica Diagonal Cima >/\
-                            if(tabuleiro[i-j][k-j] == 'V'){
-                                sequencia[0]++;
-                                System.out.println("B");
+                        }else if (playerId == 1){
+                            sequencia[0] = 0;
+                            mensagemVitoria(1);
+                            if(mensagemVitoria(-1) == 1){
+                                break;
                             }
                         }
                     }
-                    if(mensagemVitoria(-1) == 1){
-                        break;
-                    }
-                    sequencia[0] = 0;
                 }
-            }
-            if(mensagemVitoria(-1) == 1){
-                break;
             }
         }
         zerarSequencia();
@@ -304,6 +290,7 @@ public class Liga_4 {
         if(sequencia[0] == 4 || sequencia[1] == 4){
             if(playerId != -1){
                 System.out.println("Jogador "+playerName[playerId]+" Venceu!");
+                imprimirTabuleiro();
                 vencedor = true;
             }
             return 1;
