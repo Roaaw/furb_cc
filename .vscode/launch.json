@@ -9,6 +9,13 @@
             "name": "Liga_4",
             "request": "launch",
             "mainClass": "Trabalho_Final.Liga_4",
+            "projectName": "furb_cc_cfdd29a3"
+        },
+        {
+            "type": "java",
+            "name": "Liga_4",
+            "request": "launch",
+            "mainClass": "Trabalho_Final.Liga_4",
             "projectName": "furb_cc_614537d9"
         },
         {

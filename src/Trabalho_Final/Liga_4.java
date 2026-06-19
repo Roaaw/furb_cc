@@ -1,5 +1,6 @@
 package Trabalho_Final;
 
+import java.text.BreakIterator;
 import java.util.Scanner;
 
 public class Liga_4 {
@@ -9,7 +10,7 @@ public class Liga_4 {
     private char opcaoMenu;
     private int coluna = Integer.MIN_VALUE;
     private boolean loopMenu = true;
-    private int[] sequencia = new int[2];
+    private int[] sequencia = new int[3];
     private int jogadas = 0;
     private boolean vencedor = false;
     private String[] playerName = new String[2];
@@ -38,29 +39,35 @@ public class Liga_4 {
     }
     private void iniciarJogo(){
         do {
-            if(turnos % 2 == 0){
-                imprimirTabuleiro();
-                playerSelect();
+            if(turnos == turnos){
+                verificaTabuleiroCheio();
+                if(vencedor != true){
+                    imprimirTabuleiro();
+                    playerSelect();
+                }
                 turnos++;
                 System.out.println();
                 System.out.println();
                 if(jogadas >=4){
                 // verificaVencedorLinha(0);
                 // verificaVencedorColuna(0);
-                verifcaVencedorDiagonal(0);
+                verificaVencedorDiagonal(0);
                 }
-            }else{
-                imprimirTabuleiro();
-                botSelect();
-                turnos++;
-                System.out.println();
-                System.out.println();
-                if(jogadas >=4){
-                // verificaVencedorLinha(1);
-                // verificaVencedorColuna(1);
-                verifcaVencedorDiagonal(1);
-                }
-            }
+            }//else{
+            //     verificaTabuleiroCheio();
+            //     if(vencedor != true){ 
+            //         imprimirTabuleiro();
+            //         botSelect();
+            //     }
+            //     turnos++;
+            //     System.out.println();
+            //     System.out.println();
+            //     if(jogadas >=4){
+            //     // verificaVencedorLinha(1);
+            //     // verificaVencedorColuna(1);
+            //     verificaVencedorDiagonal(1);
+            //     }
+            // }
             jogadas++;
         } while (vencedor != true);
     }
@@ -222,65 +229,27 @@ public class Liga_4 {
         }
     }
 //Verificação de vencedor na diagonal
-    private void verifcaVencedorDiagonal(int playerId){
+    private void verificaVencedorDiagonal(int playerId){
         zerarSequencia();
         for(int i = 5; i >= 0; i --){
             for(int k = 0; k < 7; k++){
-                int indice = k;
-                if(indice < 4){
-                    indice++;
-                }else{
-                    indice = 4;
-                }
-                if(tabuleiro[i][k] != 'B'){
-                    if(tabuleiro[i][k] == playerCor[playerId]){
-                        if(sequencia[playerId] == 0){
+                if(tabuleiro[i][k] == playerCor[playerId]){
+                    for(int j = 0; j <= 4; j++){
+                        if(tabuleiro[i-j][k+j] == playerCor[playerId]){
                             sequencia[playerId]++;
                         }
-                        if(i > 2 && k <= 3){// diagonal > cima
-                            if(tabuleiro[i-indice][k+indice] == playerCor[playerId]){
-                                System.out.println("1 Coluna "+(i-indice)+"Linha "+(k+indice));
-                                sequencia[playerId]++;
-                            }else{
-                                sequencia[playerId] = 1;
-                            }
-                        }else if(i > 2 && k >= 3){// diagonal < cima
-                            if(tabuleiro[i-indice][k-indice] == playerCor[playerId]){
-                                System.out.println("2 Coluna "+(i-indice)+"Linha "+(k-indice));
-                                sequencia[playerId]++;
-                            }else{
-                                sequencia[playerId] = 1;
-                            }
-                        }else if(i < 3 && k <= 3){// diagonal > baixo
-                            if(tabuleiro[i+indice][k-indice] == playerCor[playerId]){
-                                System.out.println("3 Coluna "+(i+indice)+"Linha "+(k-indice));
-                                sequencia[playerId]++;
-                            }else{
-                                sequencia[playerId] = 1;
-                            }
-                        }else if(i < 3 && k >=3){// diagonal < baixo
-                            if(tabuleiro[i+indice][k+indice] == playerCor[playerId]){
-                                System.out.println("4 Coluna "+(i+indice)+"Linha "+(k+indice));
-                                sequencia[playerId]++;
-                            }else{
-                                sequencia[playerId] = 1;
-                            }
-                        }
-                        if(playerId == 0){
-                            sequencia[1] = 0;
-                            mensagemVitoria(0);
-                            if(mensagemVitoria(-1) == 1){
-                                break;
-                            }
-                        }else if (playerId == 1){
-                            sequencia[0] = 0;
-                            mensagemVitoria(1);
-                            if(mensagemVitoria(-1) == 1){
-                                break;
-                            }
+                        else{
+                            sequencia[playerId] = 0;
+                            break;
                         }
                     }
                 }
+                if(sequencia[playerId] == 0){
+                    break;
+                }
+            }
+            if(sequencia[playerId] == 0){
+                break;
             }
         }
         zerarSequencia();
@@ -288,16 +257,32 @@ public class Liga_4 {
     //MSG Vitoria
     private int mensagemVitoria(int playerId){
         if(sequencia[0] == 4 || sequencia[1] == 4){
-            if(playerId != -1){
-                System.out.println("Jogador "+playerName[playerId]+" Venceu!");
+            if(playerId != -1 && playerId > -1){
                 imprimirTabuleiro();
+                System.out.println("Jogador "+playerName[playerId]+" Venceu!");
                 vencedor = true;
             }
             return 1;
         }
+        if(playerId == -1 && sequencia[2] == 7){
+                imprimirTabuleiro();
+                System.out.println("Empate!");
+                vencedor = true;
+            }
         return -1;
     }
-//reseta variaveis para o padrao
+    private void verificaTabuleiroCheio(){
+        sequencia[2] = 0;
+        for(int i = 0; i < 7; i++){
+            if(tabuleiro[0][i] != 'B'){
+                sequencia[2]++;
+                if(sequencia[2] == 7){
+                    mensagemVitoria(-1);
+                }
+            }
+        }
+    }
+    //reseta variaveis para o padrao
     private void resetVar(){
         zerarSequencia();
         jogadas = 0;
