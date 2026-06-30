@@ -99,8 +99,8 @@ public class Liga_4 {
                     loopMenu = false;
                     break;
                 case 'A':
-                    playerCor[0] = 'A'; playerName[1] = "Azul";
-                    playerCor[1] = 'V'; playerName[0] = "Vermelho";
+                    playerCor[0] = 'A'; playerName[0] = "Azul";
+                    playerCor[1] = 'V'; playerName[1] = "Vermelho";
                     loopMenu = false;
                     break;
             
