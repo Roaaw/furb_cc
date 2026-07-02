@@ -1,19 +1,18 @@
-<!-- ## Getting Started
+# Repositório de Introdução à Programação FURB
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este repositório contém exercícios e o trabalho final realizados durante o período de janeiro de 2026 a junho de 2026.
 
-## Folder Structure
+## Estrutura do Projeto
 
-The workspace contains two folders by default, where:
+- `src/`: código fonte em Java
+- `lib/`: dependências
+- `bin/`: arquivos compilados e executáveis
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Conteúdo
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+- Exercícios por unidade de aula
+- Projeto final da disciplina
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Observações
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies). -->
-## Repositório referente as aulas de Introdução a Programação FURB.
+O repositório é referência para as aulas de Introdução à Programação da FURB.
