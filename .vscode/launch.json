@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Liga_4GUI",
+            "request": "launch",
+            "mainClass": "Trabalho_Final.Liga_4GUI",
+            "projectName": "furb_cc_614537d9"
+        },
+        {
+            "type": "java",
+            "name": "TrabalhoFinal_entrega",
+            "request": "launch",
+            "mainClass": "Trabalho_Final.TrabalhoFinal_entrega",
+            "projectName": "furb_cc_614537d9"
+        },
+        {
+            "type": "java",
+            "name": "Liga_4",
+            "request": "launch",
+            "mainClass": "Trabalho_Final.Liga_4",
+            "projectName": "furb_cc_cfdd29a3"
+        },
+        {
+            "type": "java",
+            "name": "Liga_4",
+            "request": "launch",
+            "mainClass": "Trabalho_Final.Liga_4",
+            "projectName": "furb_cc_614537d9"
+        },
+        {
+            "type": "java",
             "name": "Uni5Exe32",
             "request": "launch",
             "mainClass": "Unidade_5.Uni5Exe32",
